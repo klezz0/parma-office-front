@@ -1,30 +1,59 @@
 <template>
   <div>
     <div class="container">
-      <div class="parmaOffice">
-        <img :src="office" rel="preload">
-        <h4>Parma Office</h4>
-      </div>
-      <div class="mainMenu">
-        <div class="menuName">Основное меню</div>
-        <div class="map">
-          <button class="btn">Карта офиса</button>
+      <div class="content">
+        <div class="parmaOffice">
+          <p class="OfficeName">
+            <img :src="office" rel="preload">
+            Parma Office
+          </p>
         </div>
-        <div>
-          <button class="btn">Мои бронирования</button>
+        <div class="mainMenu">
+          <div class="menuName">Основное меню</div>
+          <div class="map">
+            <button class="btn">
+              <img :src="Map" rel="preload">
+              Карта офиса
+            </button>
+          </div>
+          <div>
+            <button class="btn">
+              <img :src="reservation" rel="preload">
+              Мои бронирования
+            </button>
+          </div>
+          <div>
+            <button class="btn">
+              <img :src="calendar" rel="preload">
+              Календарь
+            </button>
+          </div>
+          <div>
+            <button class="btn">
+              <img :src="MyProfile" rel="preload">
+              Мой профиль
+            </button>
+          </div>
         </div>
-        <div>
-          <button class="btn">Календарь</button>
+        <div class="Admin">
+          <div class="menuNameAdmin">Администрирование</div>
+          <button class="btn">
+            <img :src="settings" rel="preload">
+            Управление картой
+          </button>
+          <button class="btn">
+            <img :src="statistik" rel="preload">
+            Статистика
+          </button>
+          <button class="btn">
+            <img :src="sisAdminchiki" rel="preload">
+            Управление пользователями
+          </button>
         </div>
-        <div>
-          <button class="btn">Мой профиль</button>
+        <div class="profile">
+          <p class="NameSurname">Имя Фамилия</p>
+          <p class="JobTitle">Должность/Роль</p>
         </div>
-      </div>
-      <div class="Admin">
-        <div class="menuNameAdmin">Администрирование</div>
-        <button class="btn">Управление картой</button>
-        <button class="btn">Статистика</button>
-        <button class="btn">Управление пользователями</button>
       </div>
     </div>
   </div>
@@ -32,12 +61,13 @@
 
 <script>
 import calendar from '@/assets/calendar.svg'
-import dragsHere from '@/assets/dragsHere.svg'
-import MyProfile from '@assets//MyProfile.svg'
+import Map from '@/assets/Map.svg'
+import MyProfile from '@/assets/MyProfile.svg'
 import office from '@/assets/office.svg'
 import settings from '@/assets/settings.svg'
-import sisAdminchiki from '@assets//sisAdminchiki.svg'
-import zakladochka from '@/assets/zakladochka.svg'
+import sisAdminchiki from '@/assets/sisAdminchiki.svg'
+import reservation from '@/assets/reservation.svg'
+import statistik from '@/assets/statistik.svg'
 
 export default {
   data() {
@@ -47,8 +77,9 @@ export default {
       settings,
       sisAdminchiki,
       calendar,
-      dragsHere,
-      zakladochka,
+      Map,
+      reservation,
+      statistik
     }
   }
 }
@@ -60,11 +91,19 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  background-color: black;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
 }
+
+.content {
+  margin-left: 14px;
+}
+
 .parmaOffice {
   display: flex;
 }
+
 .container {
   background: #323E49;
   width: 300px;
@@ -74,27 +113,71 @@ export default {
 .parmaOffice {
   color: #FFFF;
   font-size: 36px;
+  background-color: #323E49;
+  border-bottom: #232D35 1px solid;
+}
+
+.OfficeName {
+  background-color: #323E49;
+  color: #FFFF;
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 20px;
 }
 
 .menuName {
-  font-size: 14px;
   color: #93999F;
 }
 
 .menuNameAdmin {
   color: #93999F;
   font-size: 14px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  margin-top: 59px;
+  margin-bottom: 38px;
+  background-color: #323E49;
+}
+
+.menuName {
+  margin-top: 14px;
+  margin-bottom: 15px;
+  background-color: #323E49;
+}
+
+.mainMenu {
+  background-color: #323E49;
+}
+
+.Admin {
+  background-color: #323E49;
+}
+
+img {
+  height: 22px;
+  width: 22px;
+  background-color: #323E49;
+}
+
+p {
+  color: #93999F;
+  background-color: #323E49;
+}
+
+.NameSurname {
+  color: #FFFF;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  border-top: #232D35 1px solid;
 }
 
 .btn {
-  display: flex;
-  justify-content: center;
   color: #FFFF;
   background-color: #323E49;
   height: 60px;
-  width: 300px;
+  width: auto;
   text-align: left;
   border: none;
   outline: none;
