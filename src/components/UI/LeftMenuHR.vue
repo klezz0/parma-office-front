@@ -1,4 +1,4 @@
-<template>
+<template xmlns="http://www.w3.org/1999/html">
   <div>
     <div class="container">
       <div class="content">
@@ -46,8 +46,10 @@
             Статистика
           </button>
           <button class="btn">
-            <img :src="sisAdminchiki" rel="preload">
-            Управление пользователями
+            <div class="sisAdminchiki">
+              <img :src="sisAdminchiki" rel="preload">
+              Управление <br>пользователями
+            </div>
           </button>
         </div>
         <div class="profile">
@@ -79,7 +81,7 @@ export default {
       calendar,
       Map,
       reservation,
-      statistik
+      statistik,
     }
   }
 }
@@ -100,10 +102,6 @@ export default {
   margin-left: 14px;
 }
 
-.parmaOffice {
-  display: flex;
-}
-
 .container {
   background: #323E49;
   width: 300px;
@@ -111,6 +109,7 @@ export default {
 }
 
 .parmaOffice {
+  display: flex;
   color: #FFFF;
   font-size: 36px;
   background-color: #323E49;
@@ -156,6 +155,7 @@ img {
   height: 22px;
   width: 22px;
   background-color: #323E49;
+  margin-right: 10px;
 }
 
 p {
@@ -173,14 +173,12 @@ p {
   border-top: #232D35 1px solid;
 }
 
-.btn {
-  color: #FFFF;
-  background-color: #323E49;
-  height: 60px;
-  width: auto;
-  text-align: left;
-  border: none;
-  outline: none;
+.sisAdminchiki {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
 }
+
 
 </style>
