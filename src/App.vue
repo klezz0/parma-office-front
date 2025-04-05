@@ -1,6 +1,6 @@
 <template>
   <div>
-    <login-menu></login-menu>
+    <left-menu-hr></left-menu-hr>
   </div>
 </template>
 
